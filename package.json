@@ -1,0 +1,25 @@
+{
+  "name": "easy-mock-client",
+  "version": "1.0.0",
+  "description": "using easy mock as sdk or cli",
+  "main": "lib/cli.js",
+  "repository": "https://github.com/easy-tools/easy-mock-client.git",
+  "author": "liuwill <liuwill@live.com>",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint ./",
+    "test": "NODE_ENV=unit mocha --opts test/mocha.opts",
+    "coverage": "export NODE_ENV=unit && nyc mocha --opts test/mocha.opts",
+    "report": "export NODE_ENV=unit && nyc --reporter=html --reporter=text mocha --opts test/mocha.opts",
+    "report-coverage": "export NODE_ENV=unit && nyc report --reporter=text-lcov > coverage.lcov && codecov"
+  },
+  "dependencies": {
+    "axios": "^0.18.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^5.8.0",
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0"
+  }
+}
