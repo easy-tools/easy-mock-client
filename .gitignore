@@ -1,6 +1,7 @@
 node_modules
 docs
 dist
+temp
 **/*.bak
 yarn.lock
 app.json

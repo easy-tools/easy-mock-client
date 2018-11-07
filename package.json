@@ -1,6 +1,6 @@
 {
   "name": "easy-mock-client",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "using easy mock as sdk or cli",
   "main": "lib/index.js",
   "bin": {
