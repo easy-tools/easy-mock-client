@@ -2,7 +2,10 @@
   "name": "easy-mock-client",
   "version": "1.0.0",
   "description": "using easy mock as sdk or cli",
-  "main": "lib/cli.js",
+  "main": "lib/index.js",
+  "bin": {
+    "easy-mock-cli": "lib/cli.js"
+  },
   "repository": "https://github.com/easy-tools/easy-mock-client.git",
   "author": "liuwill <liuwill@live.com>",
   "license": "MIT",
