@@ -1,5 +1,7 @@
 # EASY MOCK CLIENT
 
+> 开发一个可以在命令行下使用easy mock的工具
+
 ## 使用说明：
 
 首先在执行脚本的目录下创建配置文件`app.json`，配置格式如下：
@@ -30,4 +32,9 @@ $ easy-mock-cli ls YourProjectId
 $ node ./lib/bin inspect YourProjectId YourMockId
 # 或者
 $ easy-mock-cli inspect YourProjectId YourMockId
+
+# 创建一个mock接口
+$ node ./lib/bin create mock
+# 或者
+$ easy-mock-cli create mock
 ```
