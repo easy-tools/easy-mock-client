@@ -8,6 +8,9 @@
   },
   "repository": "https://github.com/easy-tools/easy-mock-client.git",
   "author": "liuwill <liuwill@live.com>",
+  "keywords": [
+    "easy-mock", "cli"
+  ],
   "license": "MIT",
   "scripts": {
     "lint": "eslint ./",

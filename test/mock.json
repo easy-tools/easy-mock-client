@@ -2,7 +2,11 @@
   "route": {
     "login": "/api/u/login",
     "listProjects": "/api/project",
-    "getMock": "/api/mock"
+    "getMock": "/api/mock",
+    "createMock": "/api/mock/create",
+    "updateMock": "/api/mock/update",
+    "deleteMock": "/api/mock/delete",
+    "deleteProject": "/api/project/delete"
   },
   "api": {
     "/api/project": {
@@ -35,6 +39,42 @@
             "token": "mock_token",
             "user": "liuwill"
           }
+        }
+      }
+    },
+    "/api/project/delete": {
+      "method": "POST",
+      "response": {
+        "data": {
+          "success": true,
+          "data": null
+        }
+      }
+    },
+    "/api/mock/delete": {
+      "method": "POST",
+      "response": {
+        "data": {
+          "success": true,
+          "data": null
+        }
+      }
+    },
+    "/api/mock/create": {
+      "method": "POST",
+      "response": {
+        "data": {
+          "success": true,
+          "data": null
+        }
+      }
+    },
+    "/api/mock/update": {
+      "method": "POST",
+      "response": {
+        "data": {
+          "success": true,
+          "data": null
         }
       }
     }
