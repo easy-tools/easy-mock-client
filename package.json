@@ -4,7 +4,7 @@
   "description": "using easy mock as sdk or cli",
   "main": "lib/index.js",
   "bin": {
-    "easy-mock-cli": "lib/cli.js"
+    "easy-mock-cli": "lib/bin.js"
   },
   "repository": "https://github.com/easy-tools/easy-mock-client.git",
   "author": "liuwill <liuwill@live.com>",
