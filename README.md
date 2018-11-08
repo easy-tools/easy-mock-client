@@ -1,6 +1,7 @@
 # EASY MOCK CLIENT
+[![Build Status](https://travis-ci.org/easy-tools/easy-mock-client.svg?branch=master)](https://travis-ci.org/easy-tools/easy-mock-client)
 
-> 开发一个可以在命令行下使用easy mock的工具
+> 开发一个可以在命令行下使用[easy mock](https://github.com/easy-mock/easy-mock)的工具
 
 ## 使用说明：
 

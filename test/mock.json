@@ -1,0 +1,14 @@
+{
+  "/api/u/login": {
+    "method": "POST",
+    "response": {
+      "data": {
+        "success": true,
+        "data": {
+          "token": "mock_token",
+          "user": "liuwill"
+        }
+      }
+    }
+  }
+}
