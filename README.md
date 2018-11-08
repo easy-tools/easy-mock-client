@@ -18,8 +18,16 @@
 ```shell
 # 列出所有project
 $ node ./lib/bin ls
+# 或者
+$ easy-mock-cli ls
 
 # 获取单个project的信息和project下的所有mock接口
 $ node ./lib/bin ls YourProjectId
+# 或者
+$ easy-mock-cli ls YourProjectId
 
+# 查看某个project下的单个mock详细信息
+$ node ./lib/bin inspect YourProjectId YourMockId
+# 或者
+$ easy-mock-cli inspect YourProjectId YourMockId
 ```
