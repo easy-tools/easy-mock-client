@@ -4,6 +4,7 @@ dist
 temp
 **/*.bak
 yarn.lock
+package-lock.json
 app.json
 now.json
 coverage
