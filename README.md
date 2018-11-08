@@ -1,9 +1,13 @@
 # EASY MOCK CLIENT
-[![Build Status](https://travis-ci.org/easy-tools/easy-mock-client.svg?branch=master)](https://travis-ci.org/easy-tools/easy-mock-client)
+[![Build Status][travis-image]][travis-url]
 
 > 开发一个可以在命令行下使用[easy mock](https://github.com/easy-mock/easy-mock)的工具
 
 ## 使用说明：
+
+### 客户端使用
+
+`npm install -g easy-mock-client`
 
 首先在执行脚本的目录下创建配置文件`app.json`，配置格式如下：
 ```json
@@ -39,3 +43,39 @@ $ node ./lib/bin create mock
 # 或者
 $ easy-mock-cli create mock
 ```
+
+### SDK使用：
+
+```
+yarn add easy-mock-client
+```
+
+直接在代码中调用api，代码可以参看命令行实现或者单元测试。
+
+```javascript
+import EasyMockClient from 'easy-mock-client'
+
+async function main() {
+  const client = new EasyMockClient({
+    "host": "http://mock.liuwill.com",
+    "name": "username",
+    "password": "password" 
+  })
+  client.connect().then(responseData => {
+    console.log('登录Easy Mock成功')
+  })
+
+  const myProjects = await client.listProjects()
+  console.log(myProjects)
+}
+main().catch(err => {
+    process.exit(1)
+})
+```
+
+## License
+
+  [MIT](./LICENSE)
+
+[travis-image]: https://img.shields.io/travis/easy-tools/easy-mock-client/master.svg?style=flat-square
+[travis-url]: https://travis-ci.org/easy-tools/easy-mock-client

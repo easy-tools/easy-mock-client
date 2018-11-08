@@ -7,8 +7,8 @@ class RequestMock {
 
   request(options) {
     return new Promise((resolve, reject) => {
-      if (mockData[options.url] && mockData[options.url].method === options.method) {
-        resolve(mockData[options.url].response)
+      if (RequestMock.mockData[options.url] && RequestMock.mockData[options.url].method === options.method) {
+        resolve(RequestMock.mockData[options.url].response)
       } else {
         reject(new Error('Not Found'))
       }
@@ -31,7 +31,14 @@ class RequestMock {
   }
 }
 
-RequestMock.mockData = mockData
+RequestMock.mockData = mockData.api
+RequestMock.fetchMockData = function (name) {
+  const url = mockData.route[name]
+  if (!url || !mockData.api[url]) {
+    return null
+  }
+  return mockData.api[url].response
+}
 RequestMock.create = (requestConfig) => {
   return new RequestMock(requestConfig)
 }

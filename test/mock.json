@@ -1,12 +1,40 @@
 {
-  "/api/u/login": {
-    "method": "POST",
-    "response": {
-      "data": {
-        "success": true,
+  "route": {
+    "login": "/api/u/login",
+    "listProjects": "/api/project",
+    "getMock": "/api/mock"
+  },
+  "api": {
+    "/api/project": {
+      "method": "GET",
+      "response": {
         "data": {
-          "token": "mock_token",
-          "user": "liuwill"
+          "success": true,
+          "data": {
+            "project": {},
+            "mocks": []
+          }
+        }
+      }
+    },
+    "/api/mock": {
+      "method": "GET",
+      "response": {
+        "data": {
+          "success": true,
+          "data": []
+        }
+      }
+    },
+    "/api/u/login": {
+      "method": "POST",
+      "response": {
+        "data": {
+          "success": true,
+          "data": {
+            "token": "mock_token",
+            "user": "liuwill"
+          }
         }
       }
     }
