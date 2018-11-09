@@ -3,7 +3,7 @@ let path = require('path')
 
 let EasyMockClient = require('../../lib/client')
 let RequestMock = require('../request')
-let mockData = require('../mock.json')
+let mockData = require('../mock')
 
 let { expect, assert } = chai
 
@@ -11,19 +11,22 @@ EasyMockClient.setHttpRequest(RequestMock)
 
 const client = new EasyMockClient({})
 let source = Date.now()
-let mockCreated = {
-  "id": "5be40349380a47002f437483",
-  "url": "/api/status",
-  "method": "get",
-  "project_id": source,
-  "description": "status dem", "mode": "{\n  \"status\": 0\n}", "parameters": null, "response_model": null
-}
+let mockCreated = mockData.data.mockCreated
+
+let projectCreated = mockData.data.projectCreated
 
 describe('should easy mock work', function () {
   it('should connect', function (done) {
     client.connect().then((responseData) => {
       expect(responseData).to.be.equal(RequestMock.fetchMockData('login').data)
-      done()
+    })
+
+    client.listProjects().then(responseData => {
+      expect(responseData).to.be.equal(RequestMock.fetchMockData('listProjects').data)
+      client.connect().then(response => {
+        assert.isTrue(response)
+        done()
+      })
     })
   })
 
@@ -58,6 +61,13 @@ describe('should easy mock work', function () {
   it('should create mock', function (done) {
     client.createMock(mockCreated).then(responseData => {
       expect(responseData).to.be.equal(RequestMock.fetchMockData('createMock').data)
+      done()
+    })
+  })
+
+  it('should create project', function (done) {
+    client.createProject(projectCreated).then(responseData => {
+      expect(responseData).to.be.equal(RequestMock.fetchMockData('createProject').data)
       done()
     })
   })
