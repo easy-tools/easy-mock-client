@@ -1,5 +1,6 @@
 # EASY MOCK CLIENT
 [![Build Status][travis-image]][travis-url]
+[![NPM version][npm-image]][npm-url]
 
 > 开发一个可以在命令行下使用[easy mock](https://github.com/easy-mock/easy-mock)的工具
 
@@ -21,7 +22,11 @@
 ```
 分别设置easy mock服务器的主机地址，用户名和密码。
 
+查看帮助：
+`$ easy-mock-cli help`
+
 执行命令：
+
 ```shell
 # 列出所有project
 $ node ./lib/bin ls
@@ -73,9 +78,15 @@ main().catch(err => {
 })
 ```
 
+### 效果
+
+![](./docs/demo.png)
+
 ## License
 
   [MIT](./LICENSE)
 
 [travis-image]: https://img.shields.io/travis/easy-tools/easy-mock-client/master.svg?style=flat-square
 [travis-url]: https://travis-ci.org/easy-tools/easy-mock-client
+[npm-image]: https://img.shields.io/npm/v/easy-mock-client.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/easy-mock-client
