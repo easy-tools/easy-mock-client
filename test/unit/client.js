@@ -23,10 +23,27 @@ describe('should easy mock work', function () {
 
     client.listProjects().then(responseData => {
       expect(responseData).to.be.equal(RequestMock.fetchMockData('listProjects').data)
+      assert.isTrue(client.isConnected())
       client.connect().then(response => {
         assert.isTrue(response)
         done()
       })
+    })
+  })
+
+  it('should generate Post work', function (done) {
+    client.generatePost('/api/error/post', {}).catch(err => {
+      expect(err).to.be.an('error')
+      expect(err.message).to.be.equal('fail')
+      done()
+    })
+  })
+
+  it('should generate Get work', function (done) {
+    client.generateGet('/api/error/get', {}).catch(err => {
+      expect(err).to.be.an('error')
+      expect(err.message).to.be.equal('fail')
+      done()
     })
   })
 

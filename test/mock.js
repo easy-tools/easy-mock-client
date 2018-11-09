@@ -10,6 +10,13 @@ function generateApiMock(method, data){
   }
 }
 
+const errorResponse = {
+  "data": {
+    success: false,
+    message: "fail",
+  }
+}
+
 module.exports = {
   "data": {
     "mockCreated": {
@@ -51,5 +58,13 @@ module.exports = {
     "/api/mock/delete": generateApiMock('POST'),
     "/api/mock/create": generateApiMock('POST'),
     "/api/mock/update": generateApiMock('POST'),
+    "/api/error/post": {
+      "method": "POST",
+      "response": errorResponse,
+    },
+    "/api/error/get": {
+      "method": "GET",
+      "response": errorResponse,
+    }
   }
 }
