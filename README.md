@@ -89,7 +89,7 @@ main().catch(err => {
 
 [travis-image]: https://img.shields.io/travis/easy-tools/easy-mock-client/master.svg?style=flat-square
 [travis-url]: https://travis-ci.org/easy-tools/easy-mock-client
-[codecov-image]: https://img.shields.io/codecov/c/github/codecov/example-python.svg?style=flat-square
+[codecov-image]: https://img.shields.io/codecov/c/github/easy-tools/easy-mock-client.svg?style=flat-square
 [codecov-url]: https://codecov.io/gh/easy-tools/easy-mock-client
 [npm-image]: https://img.shields.io/npm/v/easy-mock-client.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/easy-mock-client
