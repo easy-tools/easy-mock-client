@@ -24,7 +24,7 @@
 分别设置easy mock服务器的主机地址，用户名和密码。
 
 查看帮助：
-`$ easy-mock-cli help`
+`$ easy-mock-client help`
 
 执行命令：
 
@@ -32,22 +32,22 @@
 # 列出所有project
 $ node ./lib/bin ls
 # 或者
-$ easy-mock-cli ls
+$ easy-mock-client ls
 
 # 获取单个project的信息和project下的所有mock接口
 $ node ./lib/bin ls YourProjectId
 # 或者
-$ easy-mock-cli ls YourProjectId
+$ easy-mock-client ls YourProjectId
 
 # 查看某个project下的单个mock详细信息
 $ node ./lib/bin inspect YourProjectId YourMockId
 # 或者
-$ easy-mock-cli inspect YourProjectId YourMockId
+$ easy-mock-client inspect YourProjectId YourMockId
 
 # 创建一个mock接口
 $ node ./lib/bin create mock
 # 或者
-$ easy-mock-cli create mock
+$ easy-mock-client create mock
 ```
 
 ### SDK使用：
