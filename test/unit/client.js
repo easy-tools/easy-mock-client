@@ -32,6 +32,36 @@ describe('test easy mock client', function () {
   })
 
   describe('should easy mock work fine', function () {
+    const fineMockConfig = [{
+      exec: 'listProjects',
+      params: [],
+      name: 'list all project',
+    }, {
+      exec: 'getMock',
+      params: [source],
+      name: 'get mock data',
+    }, {
+      exec: 'deleteProject',
+      params: [source],
+      name: 'delete single project',
+    }, {
+      exec: 'deleteMock',
+      params: [source],
+      name: 'delete single mock',
+    }, {
+      exec: 'createMock',
+      params: [mockCreated],
+      name: 'create single mock',
+    }, {
+      exec: 'createProject',
+      params: [projectCreated],
+      name: 'create single project',
+    }, {
+      exec: 'updateMock',
+      params: [mockCreated],
+      name: 'update mock data',
+    }]
+
     it('should generate Post work', function (done) {
       client.generatePost('/api/error/post', {}).catch(err => {
         expect(err).to.be.an('error')
@@ -48,51 +78,15 @@ describe('test easy mock client', function () {
       })
     })
 
-    it('should get project list', function (done) {
-      client.listProjects().then(responseData => {
-        expect(responseData).to.be.equal(RequestMock.fetchMockData('listProjects').data)
-        done()
-      })
-    })
-
-    it('should get mock', function (done) {
-      client.getMock(source).then(responseData => {
-        expect(responseData).to.be.equal(RequestMock.fetchMockData('getMock').data)
-        done()
-      })
-    })
-
-    it('should delete mock', function (done) {
-      client.deleteProject(source).then(responseData => {
-        expect(responseData).to.be.equal(RequestMock.fetchMockData('deleteProject').data)
-        done()
-      })
-    })
-
-    it('should delete project', function (done) {
-      client.deleteMock(source).then(responseData => {
-        expect(responseData).to.be.equal(RequestMock.fetchMockData('deleteMock').data)
-        done()
-      })
-    })
-
-    it('should create mock', function (done) {
-      client.createMock(mockCreated).then(responseData => {
-        expect(responseData).to.be.equal(RequestMock.fetchMockData('createMock').data)
-        done()
-      })
-    })
-
-    it('should create project', function (done) {
-      client.createProject(projectCreated).then(responseData => {
-        expect(responseData).to.be.equal(RequestMock.fetchMockData('createProject').data)
-        done()
-      })
-    })
-
-    it('should update mock', function (done) {
-      client.updateMock(mockCreated).then(responseData => {
-        expect(responseData).to.be.equal(RequestMock.fetchMockData('updateMock').data)
+    it('should call client functions', function (done) {
+      Promise.all(fineMockConfig.map(item => {
+        return client[item.exec].apply(client, item.params)
+      })).then(testResults => {
+        for (let i in testResults) {
+          let responseData = testResults[i]
+          let item = fineMockConfig[i]
+          expect(responseData).to.be.equal(RequestMock.fetchMockData(item.exec).data)
+        }
         done()
       })
     })
@@ -171,7 +165,7 @@ describe('test easy mock client', function () {
       })
     })
 
-    it ('should compose reject', function(done){
+    it('should compose reject', function (done) {
       const rejectFunc = function () {
         return Promise.reject(expectError)
       }
@@ -183,7 +177,7 @@ describe('test easy mock client', function () {
       errorClient.__handlePending(expectError)
     })
 
-    it ('should compose handler reject', function(done){
+    it('should compose handler reject', function (done) {
       const rejectFunc = function () {
         return Promise.reject(expectError)
       }
