@@ -1,5 +1,6 @@
 # EASY MOCK CLIENT
 [![Build Status][travis-image]][travis-url]
+[![codecov][codecov-image]][codecov-url]
 [![NPM version][npm-image]][npm-url]
 
 > 开发一个可以在命令行下使用[easy mock](https://github.com/easy-mock/easy-mock)的工具
@@ -88,5 +89,7 @@ main().catch(err => {
 
 [travis-image]: https://img.shields.io/travis/easy-tools/easy-mock-client/master.svg?style=flat-square
 [travis-url]: https://travis-ci.org/easy-tools/easy-mock-client
+[codecov-image]: https://codecov.io/gh/easy-tools/easy-mock-client/branch/master/graph/badge.svg
+[codecov-url]: https://codecov.io/gh/easy-tools/easy-mock-client
 [npm-image]: https://img.shields.io/npm/v/easy-mock-client.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/easy-mock-client

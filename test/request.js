@@ -1,4 +1,4 @@
-const mockData = require('./mock.json')
+const mockData = require('./mock')
 
 class RequestMock {
   constructor(requestConfig) {
