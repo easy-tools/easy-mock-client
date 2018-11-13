@@ -40,6 +40,7 @@ module.exports = {
     "createMock": "/api/mock/create",
     "createProject": "/api/project/create",
     "updateMock": "/api/mock/update",
+    "updateProject": "/api/project/update",
     "deleteMock": "/api/mock/delete",
     "deleteProject": "/api/project/delete"
   },
@@ -58,6 +59,7 @@ module.exports = {
     "/api/mock/delete": generateApiMock('POST'),
     "/api/mock/create": generateApiMock('POST'),
     "/api/mock/update": generateApiMock('POST'),
+    "/api/project/update": generateApiMock('POST'),
     "/api/error/post": {
       "method": "POST",
       "response": errorResponse,

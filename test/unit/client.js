@@ -60,6 +60,10 @@ describe('test easy mock client', function () {
       exec: 'updateMock',
       params: [mockCreated],
       name: 'update mock data',
+    }, {
+      exec: 'updateProject',
+      params: [projectCreated],
+      name: 'update project data',
     }]
 
     it('should generate Post work', function (done) {
